@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>NexusForm | Admin Dashboard + Registration Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<div class="app-container">
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="logo">
+            <h2>NexusForm <span>✦ Admin Suite</span></h2>
+        </div>
+        <div class="nav-links">
+            <button class="nav-btn active" data-page="home"><i class="fas fa-home"></i> Home</button>
+            <button class="nav-btn" data-page="about"><i class="fas fa-info-circle"></i> About</button>
+            <button class="nav-btn" data-page="contact"><i class="fas fa-envelope"></i> Contact</button>
+            <button class="nav-btn" data-page="register"><i class="fas fa-user-plus"></i> Register</button>
+            <button class="nav-btn" data-page="admin"><i class="fas fa-user-shield"></i> Admin Panel</button>
+        </div>
+        <div class="admin-badge">
+            <i class="fas fa-crown"></i> Admin Access
+        </div>
+    </div>
+
+    <div class="panels">
+        <!-- HOME PAGE -->
+        <div id="home-page" class="page active-page">
+            <div class="hero">
+                <h1>Welcome to NexusForm Admin Ecosystem</h1>
+                <p>Seamless user registration + powerful admin dashboard to manage users.</p>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-card"><i class="fas fa-users"></i><h3>User Management</h3><p>Admin panel with full CRUD</p></div>
+                <div class="feature-card"><i class="fas fa-shield-alt"></i><h3>Secure Reg Form</h3><p>Validation & real-time feedback</p></div>
+                <div class="feature-card"><i class="fas fa-chart-line"></i><h3>Analytics Ready</h3><p>Track registered users</p></div>
+                <div class="feature-card"><i class="fas fa-database"></i><h3>LocalStorage DB</h3><p>Persistent user data</p></div>
+            </div>
+            <div style="margin-top: 2rem; text-align: center;">
+                <button class="btn-register" style="width: auto; padding: 0.8rem 2rem;" id="homeRegBtn"><i class="fas fa-arrow-right"></i> Start Registration →</button>
+            </div>
+        </div>
+
+        <!-- ABOUT PAGE -->
+        <div id="about-page" class="page">
+            <div class="info-card">
+                <h2><i class="fas fa-rocket"></i> About NexusForm + Admin</h2>
+                <p>Full-stack developer solution: Beautiful registration form + complete admin dashboard. Manage all registered users: view, edit, delete, and track statistics. Data persists using localStorage — perfect demo for portfolio or production-ready prototype. Built with vanilla HTML/CSS/JS.</p>
+                <br>
+                <p><strong>✨ Admin Features:</strong> View all users, edit any field, delete users, real-time stats, and intuitive UI.</p>
+            </div>
+        </div>
+
+        <!-- CONTACT PAGE -->
+        <div id="contact-page" class="page">
+            <div class="info-card">
+                <h2><i class="fas fa-address-card"></i> Admin Support</h2>
+                <p>For admin-related inquiries or superuser access:</p>
+                <div style="margin-top: 1rem;">
+                    <p><i class="fas fa-envelope"></i> admin@nexusform.dev</p>
+                    <p><i class="fas fa-phone"></i> +1 (800) ADMIN-123</p>
+                    <p><i class="fab fa-discord"></i> Discord: NexusAdminHub</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- REGISTRATION PAGE -->
+        <div id="register-page" class="page">
+            <div class="reg-form-container">
+                <div class="reg-header" style="text-align:center; margin-bottom:1.5rem;">
+                    <h2><i class="fas fa-id-card"></i> Create Account</h2>
+                    <p>Join the community — data is stored & visible to admin</p>
+                </div>
+                <form id="registrationForm" novalidate>
+                    <div class="inline-group">
+                        <div class="form-group">
+                          <label>First Name *</label>
+                          <input type="text" id="firstName" placeholder="John">
+                          <div class="error-message" id="firstNameError" style="display:none;">
+                            
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label>Last Name *</label>
+                          <input type="text" id="lastName" placeholder="Doe">
+                          <div class="error-message" id="lastNameError" style="display:none;">
+                            
+                          </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                      <label>Email *</label>
+                      <input type="email" id="email" placeholder="hello@example.com">
+                      <div class="error-message" id="emailError" style="display:none;">
+                        
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label>Password *</label>
+                      <input type="password" id="password" placeholder="Min 6 chars">
+                      <div class="error-message" id="passwordError" style="display:none;">
+                        
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label>Confirm Password</label>
+                      <input type="password" id="confirmPwd">
+                      <div class="error-message" id="confirmError" style="display:none;">
+                        
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label>Date of Birth</label>
+                      <input type="date" id="dob">
+                      <div class="error-message" id="dobError" style="display:none;">
+                        
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label>Gender</label>
+                      <div class="radio-group">
+                        <label><input type="radio" name="gender" value="Male"> Male</label>
+                        <label><input type="radio" name="gender" value="Female"> Female</label>
+                        <label><input type="radio" name="gender" value="Other"> Other</label>
+                      </div>
+                    </div>
+                    <div class="form-group"><label>Country</label>
+                      <select id="country"><option value="ethiopia">ethiopia</option>
+                        <option value="Canada"></option><option value="UK">UK</option>
+                        <option value="India">India</option>
+                        <option value="Australia">Australia</option>
+                      </select>
+                    </div>
+                    <button type="submit" class="btn-register">
+                      <i class="fas fa-check-circle"></i> Register</button>
+                    <div id="formFeedback"></div>
+                </form>
+            </div>
+        </div>
+
+        <!-- ADMIN PANEL PAGE -->
+        <div id="admin-page" class="page">
+            <div class="admin-container">
+                <div class="admin-header">
+                    <h2><i class="fas fa-user-shield"></i> Admin Dashboard</h2>
+                    <div class="stats-badge" id="userStats">Total Users: 0</div>
+                </div>
+                <div style="overflow-x: auto;">
+                    <table class="user-table" id="userTable">
+                        <thead>
+                            <tr><th>ID</th><th>Full Name</th><th>Email</th><th>Gender</th><th>Country</th><th>DOB</th><th>Actions</th></tr>
+                        </thead>
+                        <tbody id="userTableBody">
+                            <tr><td colspan="7" class="empty-state">No users registered yet. Add via registration form.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="admin-actions">
+                    <button id="clearAllUsersBtn" class="btn-register btn-danger" style="background:#dc3545;"><i class="fas fa-trash-alt"></i> Delete All Users</button>
+                    <button id="refreshAdminBtn" class="btn-register" style="background:#28a745;"><i class="fas fa-sync-alt"></i> Refresh Data</button>
+                </div>
+                <div id="adminFeedback" style="margin-top: 1rem;"></div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <i class="far fa-copyright"></i> 2026 NexusForm — Full Admin Integration | Manage users with localStorage
+    </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
